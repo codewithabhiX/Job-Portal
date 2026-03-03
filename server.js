@@ -4,9 +4,10 @@ import userRouter from './src/feature/User/user.router.js'
 let server=express();
 
 server.get('/',function(req,res){
-    res.send('hi');
+    res.send('home');
 })
 
+server.use(express.urlencoded());
 server.use('/user',userRouter);
 
 server.listen(3000,function(){
