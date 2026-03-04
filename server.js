@@ -4,7 +4,8 @@ import userRouter from './src/feature/User/user.router.js'
 let server=express();
 
 server.get('/',function(req,res){
-    res.send('home');
+   res.send("hi")
+    
 })
 
 server.use(express.urlencoded());

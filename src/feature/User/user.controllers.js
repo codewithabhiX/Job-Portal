@@ -7,8 +7,8 @@ export default class UserController{
     }
 
     postRegister(req,res,next){
-      let {name,email,password}=req.body;
-      UserModel.postAddUser(name,email,password);
+      let {role,name,email,password}=req.body;
+      UserModel.postAddUser(role,name,email,password);
       res.redirect("/user/login")
     }
 
@@ -18,10 +18,16 @@ export default class UserController{
 
     postLogin(req,res,next){
       let {email,password}=req.body;
-      if(UserModel.validUser(email,password)){
-        res.redirect("/")
+      let role = UserModel.validUser(email,password);
+
+        if(role){
+            if(role === "candidate"){
+                return res.send("candidate");
+            }else{
+                return res.send("recruiter");
+            }
       }else{
-        res.sendFile(path.join(path.resolve(),'src','views','login.html'));
+        return res.sendFile(path.join(path.resolve(),'src','views','login.html'));
       }
     }
 }

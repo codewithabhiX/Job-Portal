@@ -1,6 +1,13 @@
 <form action="/user/register" method="post">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name"/>
+    
+    <label for="role">Type</label>
+    <select name="role" id="role">
+        <option value="recruiter">recruiter</option>
+        <option value="candidate">candidate</option>
+    </select>
+
+    <label for="name"></label>
+    <input type="text" name="name" id="name" />
     <label for="email">Email</label>
     <input type="email" name="email" id="email" />
     <label for="password">Password</label>
