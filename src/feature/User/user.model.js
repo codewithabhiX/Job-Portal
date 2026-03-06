@@ -21,7 +21,7 @@ export default class UserModel{
     static validUser(email,password){
         for(let i=0;i<user.length;i++){
             if(user[i].email==email && user[i].password==password){
-                return user[i].role;
+                return user[i];
             }
         }
          return false;

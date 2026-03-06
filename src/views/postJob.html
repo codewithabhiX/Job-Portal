@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Post a Job</title>
+    <link rel="stylesheet" href="/css/postJob.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Post a New Job</h2>
+
+        <form class="job-form" action="/job/postjob" method="Post">
+
+            <div class="form-group">
+                <label>Job Title</label>
+                <input type="text" name="title" placeholder="Frontend Developer">
+            </div>
+
+            <div class="form-group">
+                <label>Company Name</label>
+                <input type="text" name="companyName" placeholder="TechCorp">
+            </div>
+
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text" name="location" placeholder="Bangalore / Remote">
+            </div>
+
+            <div class="row">
+
+                <div class="form-group">
+                    <label>Job Type</label>
+                    <select name="jobType"> 
+                        <option>Full-time</option>
+                        <option>Part-time</option>
+                        <option>Internship</option>
+                        <option>Contract</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Work Mode</label>
+                    <select name="workMode">
+                        <option>Remote</option>
+                        <option>Hybrid</option>
+                        <option>On-site</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="form-group">
+                    <label>Minimum Salary</label>
+                    <input type="number" name="minimumSalary" placeholder="300000">
+                </div>
+
+                <div class="form-group">
+                    <label>Maximum Salary</label>
+                    <input type="number" name="maximumSalary" placeholder="800000">
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label>Experience Required</label>
+                <input type="text" name="experience" placeholder="0-2 Years">
+            </div>
+
+            <div class="form-group">
+                <label>Required Skills</label>
+                <input type="text" name="skills" placeholder="React, JavaScript, CSS">
+            </div>
+
+            <div class="form-group">
+                <label>Job Description</label>
+                <textarea rows="5" name="description" placeholder="Write job description..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Application Deadline</label>
+                <input type="date" name="applicationDeadline">
+            </div>
+
+            <button class="post-btn" type="submit">Post Job</button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

@@ -18,12 +18,14 @@ export default class UserController{
 
     postLogin(req,res,next){
       let {email,password}=req.body;
-      let role = UserModel.validUser(email,password);
+      let user = UserModel.validUser(email,password);
 
-        if(role){
-            if(role === "candidate"){
+        if(user.role){
+            if(user.role === "candidate"){
+                req.session.userId=user.id;
                 return  res.sendFile(path.join(path.resolve(),"src",'views',"home.html"))
             }else{
+                req.session.userId=user.id;
                 return  res.sendFile(path.join(path.resolve(),"src",'views',"home.html"))
             }
       }else{
