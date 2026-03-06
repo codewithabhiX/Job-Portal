@@ -1,10 +1,13 @@
 import express from "express"
 import userRouter from './src/feature/User/user.router.js'
+import path from 'path'
 
 let server=express();
 
+server.use(express.static("public"));
+
 server.get('/',function(req,res){
-   res.send("hi")
+   res.sendFile(path.join(path.resolve(),"src",'views',"home.html"))
     
 })
 

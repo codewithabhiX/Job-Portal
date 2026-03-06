@@ -22,9 +22,9 @@ export default class UserController{
 
         if(role){
             if(role === "candidate"){
-                return res.send("candidate");
+                return  res.sendFile(path.join(path.resolve(),"src",'views',"home.html"))
             }else{
-                return res.send("recruiter");
+                return  res.sendFile(path.join(path.resolve(),"src",'views',"home.html"))
             }
       }else{
         return res.sendFile(path.join(path.resolve(),'src','views','login.html'));

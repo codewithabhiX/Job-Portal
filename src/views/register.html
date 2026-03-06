@@ -1,16 +1,53 @@
-<form action="/user/register" method="post">
-    
-    <label for="role">Type</label>
-    <select name="role" id="role">
-        <option value="recruiter">recruiter</option>
-        <option value="candidate">candidate</option>
-    </select>
+<!DOCTYPE html>
+<html lang="en">
 
-    <label for="name"></label>
-    <input type="text" name="name" id="name" />
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" />
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" />
-    <button type="submit">Register</button>
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | JobMingle</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2>Create Account</h2>
+
+            <form action="/user/register" method="post">
+
+                <label>User Type</label>
+
+                <select id="userType" name="role" onchange="toggleFields()">
+                    <option value="">Select User Type</option>
+                    <option value="candidate" >Candidate</option>
+                    <option value="recruiter" >Recruiter</option>
+                </select>
+
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="Enter full name">
+
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Enter email">
+
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Create password">
+
+                <button type="submit">Register</button>
+
+                <p class="register-link">
+                    Already have an account?
+                    <a href="/user/login">Login</a>
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
