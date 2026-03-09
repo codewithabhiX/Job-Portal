@@ -62,7 +62,7 @@ export default class JobModel {
     recuriterId,
   ) {
     job.push(
-      new Job(
+      new JobModel(
         job.length + 1,
         title,
         companyName,
@@ -80,6 +80,56 @@ export default class JobModel {
       ),
     );
   }
+
+   static getJobCard(){
+    return job;
+   }
 }
 
-let job = [];
+let job = [
+  {
+    "title": "Frontend Developer",
+    "companyName": "Google",
+    "location": "Bangalore, India",
+    "jobType": "Full Time",
+    "skills": ["HTML", "CSS", "JavaScript", "React"],
+    "applicationDeadline": "2026-03-30",
+    "postedDate": "2026-03-10"
+  },
+  {
+    "title": "Backend Developer",
+    "companyName": "Amazon",
+    "location": "Hyderabad, India",
+    "jobType": "Remote",
+    "skills": ["Node.js", "Express", "MongoDB"],
+    "applicationDeadline": "2026-03-28",
+    "postedDate": "2026-03-09"
+  },
+  {
+    "title": "Full Stack Developer",
+    "companyName": "Microsoft",
+    "location": "Noida, India",
+    "jobType": "Hybrid",
+    "skills": ["React", "Node.js", "MongoDB", "Docker"],
+    "applicationDeadline": "2026-04-02",
+    "postedDate": "2026-03-08"
+  },
+  {
+    "title": "Software Engineer Intern",
+    "companyName": "Flipkart",
+    "location": "Bangalore, India",
+    "jobType": "Internship",
+    "skills": ["Java", "Spring Boot", "MySQL"],
+    "applicationDeadline": "2026-03-25",
+    "postedDate": "2026-03-07"
+  },
+  {
+    "title": "DevOps Engineer",
+    "companyName": "Infosys",
+    "location": "Pune, India",
+    "jobType": "Full Time",
+    "skills": ["Docker", "Kubernetes", "AWS", "CI/CD"],
+    "applicationDeadline": "2026-04-05",
+    "postedDate": "2026-03-06"
+  }
+];

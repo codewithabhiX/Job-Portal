@@ -6,6 +6,9 @@ import session from 'express-session'
 
 let server=express();
 
+server.set("view engine",'ejs');
+server.set('views',path.join(path.resolve(),"src",'views'))
+
 server.use(express.static("public"));
 
 server.use(express.urlencoded());

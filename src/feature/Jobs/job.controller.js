@@ -8,5 +8,41 @@ export default class JobController{
   postJob(req,res){
     console.log(req.session.userId);
     console.log(req.body);
+
+    let {title,
+        companyName,
+        location,
+        jobType,
+        workMode,
+        minimumSalary,
+        maximumSalary,
+        experience,
+        skills,
+        description,
+        applicationDeadline,
+        postedDate,}=req.body;
+
+        let recuriterId=req.session.userId;
+
+    jobModel.postJob(title,
+        companyName,
+        location,
+        jobType,
+        workMode,
+        minimumSalary,
+        maximumSalary,
+        experience,
+        skills,
+        description,
+        applicationDeadline,
+        postedDate,
+        recuriterId,)
+
+        return  res.redirect('/job/');
+  }
+
+  getJob(req,res){
+     let card=jobModel.getJobCard();
+     return  res.render('jobCard',{card:card});
   }
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="/css/jobCard.css">
+</head>
+<body>
+
+<div class="job-container">
+
+    <% for(let i=0;i<card.length;i++){%>
+     <div class="job-card">
+
+        <h2 class="job-title"><%=card[i].title%></h2>
+
+        <p class="company-name"><%=card[i].companyName%></p>
+
+        <div class="job-details">
+            <span class="location"><%=card[i].location%></span>
+            <span class="job-type"><%=card[i].jobType%></span>
+        </div>
+        <div class="skills">
+            <span><%=card[i].skills%></span>
+            <span><%=card[i].skills%></span>
+            <span><%=card[i].skills%></span>
+            <span><%=card[i].skills%></span>
+        </div>
+
+        <div class="job-footer">
+            <p>Posted: <strong><%=card[i].postedDate%></strong></p>
+            <p>Deadline: <strong><%=card[i].applicationDeadline%></strong></p>
+        </div>
+
+        <button class="apply-btn">View Details</button>
+
+    </div>
+<%}%>
+</div>
+
+</body>
+</html>
