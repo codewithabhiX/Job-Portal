@@ -1,42 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Job Portal</title>
+    <title>Job Details</title>
     <link rel="stylesheet" href="/css/jobCard.css">
 </head>
+
 <body>
 
-<div class="job-container">
+    <div class="main-container">
 
-    <% for(let i=0;i<card.length;i++){%>
-     <div class="job-card">
+        <!-- LEFT SIDE JOB LIST -->
 
-        <h2 class="job-title"><%=card[i].title%></h2>
+        <div class="job-list">
 
-        <p class="company-name"><%=card[i].companyName%></p>
+            <% for(let i=0;i<card.length;i++){ %>
 
-        <div class="job-details">
-            <span class="location"><%=card[i].location%></span>
-            <span class="job-type"><%=card[i].jobType%></span>
+                <div class="job-card-small">
+
+                    <h3 class="job-title">
+                        <%= card[i].title %>
+                    </h3>
+
+                    <p class="company">
+                        <%= card[i].companyName %>
+                    </p>
+
+                    <button class="view-btn" data-id="<%= card[i].id %>">
+                        View Details
+                    </button>
+
+                </div>
+
+                <% } %>
+
         </div>
-        <div class="skills">
-            <span><%=card[i].skills%></span>
-            <span><%=card[i].skills%></span>
-            <span><%=card[i].skills%></span>
-            <span><%=card[i].skills%></span>
-        </div>
 
-        <div class="job-footer">
-            <p>Posted: <strong><%=card[i].postedDate%></strong></p>
-            <p>Deadline: <strong><%=card[i].applicationDeadline%></strong></p>
-        </div>
 
-        <button class="apply-btn">View Details</button>
+        <!-- RIGHT SIDE JOB DESCRIPTION -->
+
+        <div class="job-detail">
+
+            <h1 id="jobTitle">
+                Select a Job
+            </h1>
+
+            <p class="company-name" id="companyName"></p>
+
+            <div class="meta">
+
+                <span id="location"></span>
+
+                <span id="jobType"></span>
+
+            </div>
+
+            <h3>Required Skills</h3>
+
+            <div class="skills" id="skills"></div>
+
+            <h3>Job Description</h3>
+
+            <p id="description">
+                Click any job on the left to view full details.
+            </p>
+
+            <div class="footer">
+
+                <p>
+                    Posted: <strong id="postedDate"></strong>
+                </p>
+
+                <p>
+                    Deadline: <strong id="deadline"></strong>
+                </p>
+
+            </div>
+
+            <button class="apply-btn">
+                Apply Now
+            </button>
+
+        </div>
 
     </div>
-<%}%>
-</div>
+
+
+    <script src="/script/toRenderJobDetails.js"></script>
 
 </body>
+
 </html>

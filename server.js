@@ -21,7 +21,7 @@ server.use(session({
   cookie: {secure: false }
 }))
 
-server.use('/home',homeRouter)
+server.use(homeRouter)
 
 server.use('/user',userRouter);
 server.use('/job',jobRouter);

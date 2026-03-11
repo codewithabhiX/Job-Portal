@@ -5,6 +5,6 @@ let homeController=new HomeController();
 
 let homeRouter=express.Router();
 
-homeRouter.get('/',homeController.getHome)
+homeRouter.get("/",homeController.getHome)
 
 export default homeRouter;

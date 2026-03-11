@@ -24,17 +24,17 @@ JobMingle
 <ul class="nav-links">
  <% if(role=="candidate"){ %>
     <li><a >Home</a></li>
-    <li><a href="/job/">MyJobs</a></li>
+    <li><a href="/job/">Jobs</a></li>
     <li><a href="/companies">Companies</a></li>
     <li><a href="/user/profile">Profile</a></li>
     <li><a class="logout-btn" href="/user/logout">Logout</a></li>
   <% } else if(role=="recruiter"){ %>
     <li><a >Home</a></li>
-    <li><a href="/job/">MyJobs</a></li>
+    <li><a href="/job/recruiter">View Jobs</a></li>
     <li><a class="logout-btn" href="/user/logout">Logout</a></li>
   <% }else{%>
     <li><a href="/home/">Home</a></li>
-    <li><a href="/job/">MyJobs</a></li>
+    <li><a href="/job/">Jobs</a></li>
     <li><a href="/companies">Companies</a></li>
     <li><a href="/user/login">Login</a></li>
     <li><a class="register-btn" href="/user/register">Register</a></li>

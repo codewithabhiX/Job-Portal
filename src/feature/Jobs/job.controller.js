@@ -38,11 +38,23 @@ export default class JobController{
         postedDate,
         recuriterId,)
 
-        return  res.redirect('/job/');
+        return  res.redirect('/job/recruiter');
   }
 
   getJob(req,res){
      let card=jobModel.getJobCard();
      return  res.render('jobCard',{card:card});
+  }
+
+  getRecruiterJobs(req,res){
+    console.log(req.session.userId);
+      let card=jobModel.getRecruiterJobCard(req.session.userId)
+      return  res.render('jobCard',{card:card});
+  }
+
+  getJobDetails(req,res){
+    const id = req.params.id
+    const job = jobModel.getDetailJobCard(id);
+    return res.status(200).json(job);
   }
 }
