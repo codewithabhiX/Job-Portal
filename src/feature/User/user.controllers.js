@@ -3,7 +3,7 @@ import UserModel from './user.model.js'
 
 export default class UserController{
      getRegister(req,res,next){
-        res.sendFile(path.join(path.resolve(),'src','views','register.html'));
+        res.render("register",{message:null})
     }
 
     postRegister(req,res,next){
@@ -23,10 +23,10 @@ export default class UserController{
         if(user.role){
             if(user.role === "candidate"){
                 req.session.userId=user.id;
-                return  res.sendFile(path.join(path.resolve(),"src",'views',"home.html"))
+                return  res.render("home",{role:user.role})
             }else{
                 req.session.userId=user.id;
-                return  res.sendFile(path.join(path.resolve(),"src",'views',"home.html"))
+                return  res.render("home",{role:user.role})
             }
       }else{
         return res.sendFile(path.join(path.resolve(),'src','views','login.html'));

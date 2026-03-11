@@ -26,6 +26,10 @@ export default class UserModel{
         }
          return false;
     }
+
+    static getUsers(){
+        return user;
+    }
 }
 
 let user=[]

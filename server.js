@@ -3,6 +3,7 @@ import userRouter from './src/feature/User/user.router.js'
 import path from 'path'
 import jobRouter from './src/feature/Jobs/job.router.js'
 import session from 'express-session'
+import homeRouter from './src/feature/Home/home.router.js'
 
 let server=express();
 
@@ -20,10 +21,7 @@ server.use(session({
   cookie: {secure: false }
 }))
 
-server.get('/',function(req,res){
-   res.sendFile(path.join(path.resolve(),"src",'views',"home.html"))
-    
-})
+server.use('/home',homeRouter)
 
 server.use('/user',userRouter);
 server.use('/job',jobRouter);
