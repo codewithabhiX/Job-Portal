@@ -92,6 +92,33 @@ export default class JobModel {
    static getDetailJobCard(id){
     return job.find(job => job.id === Number(id));
    }
+
+   static getUpdateDetailJobCard(id){
+    return job.find(job => job.id === Number(id));
+   }
+
+   static updateJob(id, title, companyName, location, jobType, workMode, minimumSalary, maximumSalary, experience, skills, description, applicationDeadline, postedDate) {
+    const jobIndex = job.findIndex(job => job.id === Number(id));
+    if (jobIndex !== -1) {
+      job[jobIndex] = {
+        id: Number(id),
+        title,
+        companyName,
+        location,
+        jobType,
+        workMode,
+        minimumSalary,
+        maximumSalary,
+        experience,
+        skills,
+        description,
+        applicationDeadline,
+        postedDate,
+        recuriterId: job[jobIndex].recuriterId, // Preserve the recruiter ID  
+      };
+    }
+
+  }
 }
 
 let job = [
@@ -101,6 +128,7 @@ let job = [
     "companyName": "Google",
     "location": "Bangalore, India",
     "jobType": "Full Time",
+    "experience": "0-2 Years",
     "skills": ["HTML", "CSS", "JavaScript", "React"],
     "description": "We are looking for a skilled Backend Developer to join our team. The ideal candidate should have experience with Node.js, Express, and MongoDB. You will be responsible for developing and maintaining our server-side applications, ensuring high performance and responsiveness to requests from the frontend.",
     "applicationDeadline": "2026-03-30",

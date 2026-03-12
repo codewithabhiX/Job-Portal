@@ -47,8 +47,27 @@ body {
     cursor: pointer;
 }
 
+.update-btn {
+    padding: 8px 14px;
+    background: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.update-btn a {
+    color: white;
+    text-decoration: none;
+}
+
 .view-btn:hover {
     background: #1d4ed8;
+}
+
+.update-btn:hover {
+    background: #4338ca;
 }
 
 
@@ -108,6 +127,7 @@ body {
     border-radius: 6px;
     cursor: pointer;
 }
+
 
 .apply-btn:hover {
     background: #1d4ed8;

@@ -30,7 +30,9 @@
                     <button class="view-btn" data-id="<%= card[i].id %>">
                         View Details
                     </button>
-
+                    <button class="update-btn">
+                        <a href="/job/update/<%= card[i].id %>" id="updateLink">Update Job</a>
+                    </button>
                 </div>
 
                 <% } %>

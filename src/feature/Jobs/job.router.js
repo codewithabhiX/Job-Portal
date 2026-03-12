@@ -13,5 +13,8 @@ jobRouter.post("/postjob",jobController.postJob)
 jobRouter.get("/recruiter",jobController.getRecruiterJobs)
 jobRouter.get("/api/:id",jobController.getJobDetails)
 
+jobRouter.get("/update/:id",jobController.getUpdateJob)
+jobRouter.post("/update/",jobController.postUpdateJob)
+
 export default jobRouter;
     

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>update a Job</title>
+    <link rel="stylesheet" href="/css/postJob.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Update a New Job</h2>
+
+        <form class="job-form" action="/job/update/" method="Post">
+
+            <div class="form-group">
+                <input type="hidden" name="id" placeholder="1"  value="<%= card.id %>">
+            </div>
+
+            <div class="form-group">
+                <label>Job Title</label>
+                <input type="text" name="title" placeholder="Frontend Developer" value="<%= card.title %>">
+            </div>
+
+            <div class="form-group">
+                <label>Company Name</label>
+                <input type="text" name="companyName" placeholder="TechCorp" value="<%= card.companyName %>">
+            </div>
+
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text" name="location" placeholder="Bangalore / Remote" value="<%= card.location %>">
+            </div>
+
+            <div class="row">
+
+                <div class="form-group">
+                    <label>Job Type</label>
+                    <select value="<%= card.jobType %>" name="jobType">
+                        <option>Full-time</option>
+                        <option>Part-time</option>
+                        <option>Internship</option>
+                        <option>Contract</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Work Mode</label>
+                    <select value="<%= card.workMode %>" name="workMode">
+                        <option>Remote</option>
+                        <option>Hybrid</option>
+                        <option>On-site</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="form-group">
+                    <label>Minimum Salary</label>
+                    <input type="number" name="minimumSalary" placeholder="300000" value="<%= card.minimumSalary %>">
+                </div>
+
+                <div class="form-group">
+                    <label>Maximum Salary</label>
+                    <input type="number" name="maximumSalary" placeholder="800000" value="<%= card.maximumSalary %>">
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label>Experience Required</label>
+                <input type="text" name="experience" placeholder="0-2 Years" value="<%= card.experience %>">
+            </div>
+
+            <div class="form-group">
+                <label>Required Skills</label>
+                <input type="text" name="skills" placeholder="React, JavaScript, CSS" value="<%= card.skills %>">
+            </div>
+
+            <div class="form-group">
+                <label>Job Description</label>
+                <textarea rows="5" name="description" placeholder="Write job description..." ><%= card.description %></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Application Deadline</label>
+                <input type="date" name="applicationDeadline" value="<%= card.applicationDeadline %>">
+            </div>
+
+            <button class="post-btn" type="submit">Update Job</button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

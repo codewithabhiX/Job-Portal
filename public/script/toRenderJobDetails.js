@@ -18,8 +18,9 @@ buttons.forEach(function (btn) {
         document.getElementById("companyName").innerText = job.companyName
         document.getElementById("location").innerText = job.location
         document.getElementById("jobType").innerText = job.jobType
-        document.getElementById("postedDate").innerText = job.postedDate
-        document.getElementById("deadline").innerText = job.applicationDeadline
+        
+        
+        
 
         const skillsContainer = document.getElementById("skills")
         skillsContainer.innerHTML = ""
@@ -32,10 +33,9 @@ buttons.forEach(function (btn) {
             skillsContainer.appendChild(span)
 
         })
-
-        document.getElementById("description").innerText =
-        "This is the full job description for the selected job."
-
+        document.getElementById("description").innerText = job.description
+        document.getElementById("postedDate").innerText = job.postedDate
+        document.getElementById("deadline").innerText = job.applicationDeadline
     })
 
 })
